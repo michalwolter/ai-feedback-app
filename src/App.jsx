@@ -3,6 +3,7 @@ import SurveyTab from './components/SurveyTab';
 import AdminTab from './components/AdminTab';
 import PromptGuide from './components/PromptGuide';
 import AIGlossary from './components/AIGlossary';
+import AITools from './components/AITools';
 import './App.css';
 
 function App() {
@@ -35,6 +36,12 @@ function App() {
           📖 Glossary
         </button>
         <button
+          className={`tab-btn ${activeTab === 'tools' ? 'active' : ''}`}
+          onClick={() => setActiveTab('tools')}
+        >
+          🛠️ Tools
+        </button>
+        <button
           className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`}
           onClick={() => setActiveTab('admin')}
         >
@@ -46,6 +53,7 @@ function App() {
         {activeTab === 'survey' && <SurveyTab />}
         {activeTab === 'guide' && <PromptGuide />}
         {activeTab === 'glossary' && <AIGlossary />}
+        {activeTab === 'tools' && <AITools />}
         {activeTab === 'admin' && <AdminTab />}
       </main>
     </div>

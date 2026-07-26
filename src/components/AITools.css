@@ -1,0 +1,158 @@
+.tools-container {
+  width: 100%;
+}
+
+.tools-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Hero */
+.tools-hero {
+  text-align: center;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.tools-hero h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.tools-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Search */
+.tools-search {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+/* Empty */
+.tools-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Category — reuses glossary styles via shared class names */
+.tools-category {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Tools list */
+.category-tools {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  animation: fadeSlide 0.3s ease;
+}
+
+/* Tool card */
+.tool-card {
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+.tool-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.tool-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tool-tag {
+  font-size: 0.8rem;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.tool-maker {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--bg);
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.tool-description {
+  font-size: 0.925rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* Meta info (strengths / best for) */
+.tool-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tool-meta-item {
+  padding: 0.5rem 0.875rem;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.meta-value {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tools-card {
+    padding: 1.25rem;
+  }
+
+  .tool-header {
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+}
