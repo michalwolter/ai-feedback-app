@@ -1,45 +1,52 @@
 import { useState } from 'react';
-import SurveyTab from './components/SurveyTab';
-import AdminTab from './components/AdminTab';
-import PromptGuide from './components/PromptGuide';
+import HomePage from './components/HomePage';
 import AIGlossary from './components/AIGlossary';
 import AITools from './components/AITools';
+import PromptGuide from './components/PromptGuide';
+import SurveyTab from './components/SurveyTab';
+import AdminTab from './components/AdminTab';
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('survey');
+  const [activeTab, setActiveTab] = useState('home');
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>🤖 AI Tools Feedback</h1>
-        <p className="subtitle">Share how you use AI in your daily life</p>
+      <header className="app-header" onClick={() => setActiveTab('home')} style={{ cursor: 'pointer' }}>
+        <h1>🤖 AI Development — First Steps</h1>
+        <p className="subtitle">Your structured roadmap to AI-driven development</p>
       </header>
 
       <nav className="tab-nav">
         <button
-          className={`tab-btn ${activeTab === 'survey' ? 'active' : ''}`}
-          onClick={() => setActiveTab('survey')}
+          className={`tab-btn ${activeTab === 'home' ? 'active' : ''}`}
+          onClick={() => setActiveTab('home')}
         >
-          📝 Survey
-        </button>
-        <button
-          className={`tab-btn ${activeTab === 'guide' ? 'active' : ''}`}
-          onClick={() => setActiveTab('guide')}
-        >
-          🎯 Prompt Guide
+          🏠 Home
         </button>
         <button
           className={`tab-btn ${activeTab === 'glossary' ? 'active' : ''}`}
           onClick={() => setActiveTab('glossary')}
         >
-          📖 Glossary
+          📖 AI Glossary
         </button>
         <button
           className={`tab-btn ${activeTab === 'tools' ? 'active' : ''}`}
           onClick={() => setActiveTab('tools')}
         >
-          🛠️ Tools
+          🛠️ AI Tools
+        </button>
+        <button
+          className={`tab-btn ${activeTab === 'guide' ? 'active' : ''}`}
+          onClick={() => setActiveTab('guide')}
+        >
+          ✍️ Prompt Guide
+        </button>
+        <button
+          className={`tab-btn ${activeTab === 'survey' ? 'active' : ''}`}
+          onClick={() => setActiveTab('survey')}
+        >
+          📝 Survey
         </button>
         <button
           className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`}
@@ -50,10 +57,11 @@ function App() {
       </nav>
 
       <main className="tab-content">
-        {activeTab === 'survey' && <SurveyTab />}
-        {activeTab === 'guide' && <PromptGuide />}
+        {activeTab === 'home' && <HomePage onNavigate={setActiveTab} />}
         {activeTab === 'glossary' && <AIGlossary />}
         {activeTab === 'tools' && <AITools />}
+        {activeTab === 'guide' && <PromptGuide />}
+        {activeTab === 'survey' && <SurveyTab />}
         {activeTab === 'admin' && <AdminTab />}
       </main>
     </div>
