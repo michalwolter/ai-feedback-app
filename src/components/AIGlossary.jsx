@@ -32,7 +32,7 @@ const GLOSSARY_DATA = [
         term: 'LLM',
         fullName: 'Large Language Model',
         definition:
-          'A massive deep learning model trained on vast amounts of text data to understand, generate, and process human language using probabilistic prediction.',
+          'A type of artificial intelligence model trained on massive datasets of text to understand, generate, and reason about human language. LLMs use deep neural networks with billions of parameters to predict the most likely next token in a sequence, enabling capabilities like conversation, summarization, translation, and code generation. Examples include GPT-4, Claude, Gemini, and LLaMA.',
       },
       {
         term: 'Transformer Architecture',
@@ -194,7 +194,7 @@ const GLOSSARY_DATA = [
 
 function AIGlossary() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [collapsedCategories, setCollapsedCategories] = useState(new Set());
 
   const filteredData = GLOSSARY_DATA.map((category) => ({
     ...category,
@@ -209,7 +209,15 @@ function AIGlossary() {
   const totalTerms = GLOSSARY_DATA.reduce((sum, cat) => sum + cat.terms.length, 0);
 
   const toggleCategory = (index) => {
-    setExpandedCategory(expandedCategory === index ? null : index);
+    setCollapsedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
   };
 
   return (
@@ -245,7 +253,7 @@ function AIGlossary() {
           </div>
         ) : (
           filteredData.map((category, catIndex) => {
-            const isExpanded = expandedCategory === catIndex || searchQuery.length > 0;
+            const isExpanded = !collapsedCategories.has(catIndex) || searchQuery.length > 0;
             return (
               <div key={category.category} className="glossary-category">
                 <button
