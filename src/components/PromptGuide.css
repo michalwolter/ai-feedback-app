@@ -1,0 +1,302 @@
+.guide-container {
+  width: 100%;
+}
+
+.guide-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Hero section */
+.guide-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.guide-hero h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.guide-intro {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Formula box */
+.formula-box {
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border: 2px solid #c7d2fe;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.formula-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.formula-part {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.formula-part.role {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.formula-part.context {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.formula-part.task {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.formula-part.constraints {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.formula-part.format {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.formula-plus {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* Guide sections (numbered components) */
+.guide-section {
+  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.section-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.section-what {
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  line-height: 1.4;
+}
+
+.section-why {
+  font-size: 0.925rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Example boxes */
+.example-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+.example-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.example-box p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Rules divider */
+.rules-divider {
+  text-align: center;
+  margin: 2.5rem 0 2rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+}
+
+.rules-divider h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Rule cards */
+.rule-card {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.rule-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.rule-badge {
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  color: white;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rule-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.rule-card > p {
+  font-size: 0.925rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Comparison boxes (good vs bad) */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison-bad,
+.comparison-good {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.comparison-bad {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.comparison-good {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.comparison-label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-bad p,
+.comparison-good p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  font-style: italic;
+}
+
+.comparison-good ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.comparison-good ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* Iteration steps */
+.iteration-steps {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.iteration-steps li {
+  padding: 0.5rem 0;
+  font-size: 0.925rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.refinement-example {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.875rem;
+}

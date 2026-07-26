@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SurveyTab from './components/SurveyTab';
 import AdminTab from './components/AdminTab';
+import PromptGuide from './components/PromptGuide';
 import './App.css';
 
 function App() {
@@ -21,15 +22,23 @@ function App() {
           📝 Survey
         </button>
         <button
+          className={`tab-btn ${activeTab === 'guide' ? 'active' : ''}`}
+          onClick={() => setActiveTab('guide')}
+        >
+          🎯 Prompt Guide
+        </button>
+        <button
           className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`}
           onClick={() => setActiveTab('admin')}
         >
-          📊 Admin Dashboard
+          📊 Admin
         </button>
       </nav>
 
       <main className="tab-content">
-        {activeTab === 'survey' ? <SurveyTab /> : <AdminTab />}
+        {activeTab === 'survey' && <SurveyTab />}
+        {activeTab === 'guide' && <PromptGuide />}
+        {activeTab === 'admin' && <AdminTab />}
       </main>
     </div>
   );
