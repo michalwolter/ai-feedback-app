@@ -48,12 +48,6 @@ function App() {
         >
           📝 Survey
         </button>
-        <button
-          className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`}
-          onClick={() => setActiveTab('admin')}
-        >
-          📊 Admin
-        </button>
       </nav>
 
       <main className="tab-content">
@@ -64,6 +58,16 @@ function App() {
         {activeTab === 'survey' && <SurveyTab />}
         {activeTab === 'admin' && <AdminTab />}
       </main>
+
+      <footer className="app-footer">
+        <span className="footer-version">v0.1 · 2026-07-26</span>
+        <span
+          className={`footer-admin-link ${activeTab === 'admin' ? 'active' : ''}`}
+          onClick={() => setActiveTab('admin')}
+        >
+          Admin
+        </span>
+      </footer>
     </div>
   );
 }

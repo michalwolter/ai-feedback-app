@@ -184,3 +184,39 @@ body {
   margin-top: 0.5rem;
   border: 1px solid #fecaca;
 }
+
+/* Footer */
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-version {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+}
+
+.footer-admin-link {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.footer-admin-link:hover {
+  opacity: 0.8;
+  color: var(--primary);
+}
+
+.footer-admin-link.active {
+  opacity: 0.8;
+  color: var(--primary);
+}
