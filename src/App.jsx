@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SurveyTab from './components/SurveyTab';
 import AdminTab from './components/AdminTab';
 import PromptGuide from './components/PromptGuide';
+import AIGlossary from './components/AIGlossary';
 import './App.css';
 
 function App() {
@@ -28,6 +29,12 @@ function App() {
           🎯 Prompt Guide
         </button>
         <button
+          className={`tab-btn ${activeTab === 'glossary' ? 'active' : ''}`}
+          onClick={() => setActiveTab('glossary')}
+        >
+          📖 Glossary
+        </button>
+        <button
           className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`}
           onClick={() => setActiveTab('admin')}
         >
@@ -38,6 +45,7 @@ function App() {
       <main className="tab-content">
         {activeTab === 'survey' && <SurveyTab />}
         {activeTab === 'guide' && <PromptGuide />}
+        {activeTab === 'glossary' && <AIGlossary />}
         {activeTab === 'admin' && <AdminTab />}
       </main>
     </div>
